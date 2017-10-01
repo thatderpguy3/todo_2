@@ -1,5 +1,12 @@
  code_word <%=@code_word%>
  <ul>
+     <% @todos.each do |todo| %>
+     <li><a href="/todos/<%= todo.id %>">
+         <%=todo.name %>
+     </a></li>
+     <%end%>
+ </ul>
+ <ul>
      <li>
          <a href="/todos/1">Wake up</a>
      </li>
