@@ -13,23 +13,6 @@ class TodosController < ApplicationController
     end
         #{params[:word]}"
     def show
-        id = params[:id]
-        if id=='1'
-            @todo={
-                id:id,
-                name: 'Do homework',
-                duration: 60
-            }
-        elsif id=='2'
-        
-        @todo={
-            id: params[:id],
-            name: 'Wake up at 8am',
-            description: 'Mon to Fri',
-            duration: 15
-            }
-        else
-            @todo={}
-        end
+        @todo=Todo.find(params[:id])
     end
 end
